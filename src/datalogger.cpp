@@ -13,7 +13,7 @@ int16_t AcX,AcY,AcZ,Tmp,GyX,GyY,GyZ;
 void setup() {
     Serial.begin(9600);
     delay(10000);
-    Wire.begin();
+    Wire.begin(2, 0);
     Wire.beginTransmission(MPU_addr);
     Wire.write(0x6B);  // PWR_MGMT_1 register
     Wire.write(0);     // set to zero (wakes up the MPU-6050)
